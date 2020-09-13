@@ -15,7 +15,5 @@ namespace backend.data
           Task<Preco> GetPrecoAsyncById(int precoId);
 
           Task<Veiculo[]> GetAllVeiculosAsync();
-          Task<Veiculo> GetVeiculoAsyncById(int veiculoId);
-          Task<Veiculo> GetVeiculoAsyncByPlaca(string placa);
-     }
+          Task<Veiculo> GetVeiculoAsyncById(int veiculoId);     }
 }

@@ -1,9 +1,9 @@
-import { PrecoService } from './../../services/preco.service';
 import { Component, OnInit } from '@angular/core';
 import { Preco } from 'src/app/models/Preco';
 import { Router } from '@angular/router';
 import { MensagemService } from 'src/app/services/mensagem.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PrecoService } from 'src/app/services/preco.service';
 
 @Component({
   selector: 'app-preco-create',
@@ -28,7 +28,6 @@ export class PrecoCreateComponent implements OnInit {
   }
 
   cadastrarPreco(): void {
-    console.log(this.preco.valorHora);
     this.precoServico.post(this.preco).subscribe(() => {
       this.mensagemServico.showMessage('Vigencia cadastrada com sucesso!')
       this.router.navigate(['/precos']);

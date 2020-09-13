@@ -1,6 +1,6 @@
-import { PrecoService } from './../../services/preco.service';
-import { Preco } from './../../models/Preco';
 import { Component, OnInit } from '@angular/core';
+import { Preco } from 'src/app/models/Preco';
+import { PrecoService } from 'src/app/services/preco.service';
 
 @Component({
   selector: 'app-preco-read',

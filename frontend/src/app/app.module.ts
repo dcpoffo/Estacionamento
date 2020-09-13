@@ -6,10 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/template/header/header.component';
-import { FooterComponent } from './components/template/footer/footer.component';
-import { NavComponent } from './components/template/nav/nav.component';
-import { HomeComponent } from './views/home/home.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -22,11 +18,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+
+import { HeaderComponent } from './components/template/header/header.component';
+import { FooterComponent } from './components/template/footer/footer.component';
+import { NavComponent } from './components/template/nav/nav.component';
+import { HomeComponent } from './views/home/home.component';
 
 import { PrecoComponent } from './views/preco/preco.component';
-import { PrecoReadComponent } from './components/preco-read/preco-read.component';
-import { PrecoCreateComponent } from './components/preco-create/preco-create.component';
+import { PrecoReadComponent } from './components/preco/preco-read/preco-read.component';
+import { PrecoCreateComponent } from './components/preco/preco-create/preco-create.component';
+
+import { VeiculoComponent } from './views/veiculo/veiculo.component';
+import { VeiculoReadComponent } from './components/veiculo/veiculo-read/veiculo-read.component';
+import { VeiculoCreateComponent } from './components/veiculo/veiculo-create/veiculo-create.component';
+import { VeiculoDeleteComponent } from './components/veiculo/veiculo-delete/veiculo-delete.component';
+import { VeiculoUpdateComponent } from './components/veiculo/veiculo-update/veiculo-update.component';
 
 
 @NgModule({
@@ -38,7 +45,12 @@ import { PrecoCreateComponent } from './components/preco-create/preco-create.com
     HomeComponent,
     PrecoComponent,
     PrecoReadComponent,
-    PrecoCreateComponent
+    PrecoCreateComponent,
+    VeiculoComponent,
+    VeiculoReadComponent,
+    VeiculoCreateComponent,
+    VeiculoDeleteComponent,
+    VeiculoUpdateComponent
   ],
   imports: [
     BrowserModule,

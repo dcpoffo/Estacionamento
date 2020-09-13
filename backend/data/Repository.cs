@@ -65,14 +65,5 @@ namespace backend.data
 
                return await query.FirstOrDefaultAsync();
           }
-
-          public async Task<Veiculo> GetVeiculoAsyncByPlaca(string placa)
-          {
-               IQueryable<Veiculo> query = _context.Veiculo;
-               query = query.AsNoTracking().OrderBy(a => a.Placa)
-                                           .Where(a => a.Placa == placa);
-
-               return await query.FirstOrDefaultAsync();
-          }
      }
 }

@@ -33,7 +33,7 @@ namespace backend.Controllers
                }
           }
 
-          [HttpGet("{placaId}")]
+          [HttpGet("{veiculoId}")]
           public async Task<IActionResult> GetById(int veiculoId)
           {
                try
@@ -45,21 +45,7 @@ namespace backend.Controllers
                {
                     return BadRequest($"Erro ao obter Veículo pelo Id: \n{ex.Message}");
                }
-          }
-
-          [HttpGet("{placa}")]
-          public async Task<IActionResult> GetByPlaca(string placa)
-          {
-               try
-               {
-                    var result = await _repositorio.GetVeiculoAsyncByPlaca(placa);
-                    return Ok(result);
-               }
-               catch (Exception ex)
-               {
-                    return BadRequest($"Erro ao obter Veículo pela placa: \n{ex.Message}");
-               }
-          }
+          }          
 
           [HttpPost]
           public async Task<IActionResult> Post(Veiculo veiculo)

@@ -47,7 +47,7 @@ namespace backend.Controllers
           }
 
           [HttpPost]
-          public async Task<IActionResult> Post(Preco preco)
+          public async Task<IActionResult> Post(TabelaPreco preco)
           {
                try
                {
@@ -65,7 +65,7 @@ namespace backend.Controllers
           }
 
           [HttpPut("{precoId}")]
-          public async Task<IActionResult> Put(int precoId, Preco preco)
+          public async Task<IActionResult> Put(int precoId, TabelaPreco preco)
           {
                try
                {

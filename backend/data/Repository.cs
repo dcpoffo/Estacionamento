@@ -34,16 +34,16 @@ namespace backend.data
                return (await _context.SaveChangesAsync()) > 0;
           }
 
-          public async Task<Preco[]> GetAllPrecosAsync()
+          public async Task<TabelaPreco[]> GetAllPrecosAsync()
           {
-               IQueryable<Preco> query = _context.Preco;
+               IQueryable<TabelaPreco> query = _context.TabelaPreco;
                query = query.AsNoTracking().OrderBy(a => a.Id);
                return await query.ToArrayAsync();
           }
 
-          public async Task<Preco> GetPrecoAsyncById(int precoId)
+          public async Task<TabelaPreco> GetPrecoAsyncById(int precoId)
           {
-               IQueryable<Preco> query = _context.Preco;
+               IQueryable<TabelaPreco> query = _context.TabelaPreco;
                query = query.AsNoTracking().OrderBy(a => a.Id)
                                            .Where(a => a.Id == precoId);
 
@@ -65,5 +65,44 @@ namespace backend.data
 
                return await query.FirstOrDefaultAsync();
           }
+
+          public async Task<Estacionamento[]> GetAllEstacionamentosAsync(bool incluirVeiculo, bool incluirPreco)
+          {
+               IQueryable<Estacionamento> query = _context.Estacionamento;
+
+               if (incluirVeiculo)
+               {
+                    query = query.Include(v => v.Veiculo);
+               }
+
+               if (incluirPreco)
+               {
+                    query = query.Include(p => p.TabelaPreco);
+               }
+
+               query = query.AsNoTracking().OrderBy(a => a.Id);
+
+               return await query.ToArrayAsync();
+          }
+
+          public async Task<Estacionamento> GetEstacionamentoAsyncById(int veiculoId, bool incluirVeiculo, bool incluirPreco)
+          {
+               IQueryable<Estacionamento> query = _context.Estacionamento;
+
+               if (incluirVeiculo)
+               {
+                    query = query.Include(v => v.Veiculo);
+               }
+
+               if (incluirPreco)
+               {
+                    query = query.Include(p => p.TabelaPreco);
+               }
+               
+               query = query.AsNoTracking().OrderBy(a => a.Id)
+                                           .Where(a => a.Id == veiculoId);
+
+               return await query.FirstOrDefaultAsync();
+          }         
      }
 }

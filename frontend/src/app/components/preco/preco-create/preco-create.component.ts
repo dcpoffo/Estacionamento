@@ -15,7 +15,8 @@ export class PrecoCreateComponent implements OnInit {
   preco: Preco = {
     vigenciaInicial: null,
     vigenciaFinal: null,
-    valorHora: null
+    valorHora: null,
+    valorHoraAdicional: null,
   }
 
   constructor(

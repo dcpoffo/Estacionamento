@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace backend.models
 {
      public class Veiculo
@@ -7,6 +9,7 @@ namespace backend.models
           public string Marca { get; set; }
           public string Modelo { get; set; }
           public string Cor { get; set; }
+          public IEnumerable<Estacionamento> Estacionameto { get; set; }
 
           public Veiculo(int id, string placa, string marca, string modelo, string cor)
           {

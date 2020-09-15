@@ -11,9 +11,13 @@ namespace backend.data
           Task<bool> SaveChangesAsync();
 
           //precos
-          Task<Preco[]> GetAllPrecosAsync();
-          Task<Preco> GetPrecoAsyncById(int precoId);
+          Task<TabelaPreco[]> GetAllPrecosAsync();
+          Task<TabelaPreco> GetPrecoAsyncById(int precoId);
 
           Task<Veiculo[]> GetAllVeiculosAsync();
-          Task<Veiculo> GetVeiculoAsyncById(int veiculoId);     }
+          Task<Veiculo> GetVeiculoAsyncById(int veiculoId);
+
+          Task<Estacionamento[]> GetAllEstacionamentosAsync(bool incluirVeiculo, bool incluirPreco);
+          Task<Estacionamento> GetEstacionamentoAsyncById(int veiculoId, bool incluirVeiculo, bool incluirPreco);
+     }
 }

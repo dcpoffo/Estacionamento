@@ -11,6 +11,7 @@ import { VeiculoCreateComponent } from './components/veiculo/veiculo-create/veic
 import { VeiculoDeleteComponent } from './components/veiculo/veiculo-delete/veiculo-delete.component';
 import { VeiculoUpdateComponent } from './components/veiculo/veiculo-update/veiculo-update.component';
 
+import { EstacionamentoComponent } from './views/estacionamento/estacionamento.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,10 @@ const routes: Routes = [
   { path: 'veiculos/create', component: VeiculoCreateComponent },
   { path: 'veiculos/delete/:id', component: VeiculoDeleteComponent },
   { path: 'veiculos/update/:id', component: VeiculoUpdateComponent },
+  { path: 'estacionamentos', component : EstacionamentoComponent },
+  // { path: 'estacionamentos/create', component: EstacionamentoCreateComponent },
+  // { path: 'estacionamentos/delete/:id', component: EstacionamentoDeleteComponent },
+  // { path: 'estacionamentos/update/:id', component: EstacionamentoUpdateComponent },
 ];
 
 @NgModule({

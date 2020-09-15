@@ -35,6 +35,12 @@ import { VeiculoCreateComponent } from './components/veiculo/veiculo-create/veic
 import { VeiculoDeleteComponent } from './components/veiculo/veiculo-delete/veiculo-delete.component';
 import { VeiculoUpdateComponent } from './components/veiculo/veiculo-update/veiculo-update.component';
 
+import { EstacionamentoComponent } from './views/estacionamento/estacionamento.component';
+import { EstacionamentoReadComponent } from './components/estacionamento/estacionamento-read/estacionamento-read.component';
+// import { EstacionamentoCreateComponent } from './components/estacionamento/estacionamento-create/estacionamento-create.component';
+// import { EstacionamentoDeleteComponent } from './components/estacionamento/estacionamento-delete/estacionamento-delete.component';
+// import { EstacionamentoUpdateComponent } from './components/estacionamento/estacionamento-update/estacionamento-update.component';
+
 
 @NgModule({
   declarations: [
@@ -43,14 +49,19 @@ import { VeiculoUpdateComponent } from './components/veiculo/veiculo-update/veic
     FooterComponent,
     NavComponent,
     HomeComponent,
+
     PrecoComponent,
     PrecoReadComponent,
     PrecoCreateComponent,
+
     VeiculoComponent,
     VeiculoReadComponent,
     VeiculoCreateComponent,
     VeiculoDeleteComponent,
-    VeiculoUpdateComponent
+    VeiculoUpdateComponent,
+
+    EstacionamentoComponent,
+    EstacionamentoReadComponent
   ],
   imports: [
     BrowserModule,

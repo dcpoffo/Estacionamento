@@ -25,6 +25,13 @@
                 <input required type="number" matInput [(ngModel)]="preco.valorHora" [ngModelOptions]="{standalone: true}" />
             </mat-form-field>
         </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Valor da Hora Adicional</mat-label>
+                <input required type="number" matInput [(ngModel)]="preco.valorHoraAdicional" [ngModelOptions]="{standalone: true}" />
+            </mat-form-field>
+        </div>
     </form>
     <button mat-raised-button (click)="cadastrarPreco()" color="primary">Salvar
   </button>

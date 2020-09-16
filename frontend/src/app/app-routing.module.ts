@@ -12,6 +12,9 @@ import { VeiculoDeleteComponent } from './components/veiculo/veiculo-delete/veic
 import { VeiculoUpdateComponent } from './components/veiculo/veiculo-update/veiculo-update.component';
 
 import { EstacionamentoComponent } from './views/estacionamento/estacionamento.component';
+import { EstacionamentoCreateComponent } from './components/estacionamento/estacionamento-create/estacionamento-create.component';
+import { EstacionamentoDeleteComponent } from './components/estacionamento/estacionamento-delete/estacionamento-delete.component';
+import { EstacionamentoUpdateComponent } from './components/estacionamento/estacionamento-update/estacionamento-update.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,9 +25,9 @@ const routes: Routes = [
   { path: 'veiculos/delete/:id', component: VeiculoDeleteComponent },
   { path: 'veiculos/update/:id', component: VeiculoUpdateComponent },
   { path: 'estacionamentos', component : EstacionamentoComponent },
-  // { path: 'estacionamentos/create', component: EstacionamentoCreateComponent },
-  // { path: 'estacionamentos/delete/:id', component: EstacionamentoDeleteComponent },
-  // { path: 'estacionamentos/update/:id', component: EstacionamentoUpdateComponent },
+  { path: 'estacionamentos/create', component: EstacionamentoCreateComponent },
+  { path: 'estacionamentos/delete/:id', component: EstacionamentoDeleteComponent },
+  { path: 'estacionamentos/update/:id', component: EstacionamentoUpdateComponent },
 ];
 
 @NgModule({

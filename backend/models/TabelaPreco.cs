@@ -9,18 +9,16 @@ namespace backend.models
           public DateTime VigenciaInicial { get; set; }
           public DateTime VigenciaFinal { get; set; }
           public double ValorHora { get; set; }
-          public double ValorHoraAdicional { get; set; }
           public IEnumerable<Estacionamento> Estacionameto { get; set; }
 
           public TabelaPreco() { }
 
-          public TabelaPreco(int id, DateTime vigenciaInicial, DateTime vigenciaFinal, double valorHora, double valorHoraAdicional)
+          public TabelaPreco(int id, DateTime vigenciaInicial, DateTime vigenciaFinal, double valorHora)
           {
                this.Id = id;
                this.VigenciaInicial = vigenciaInicial;
                this.VigenciaFinal = vigenciaFinal;
                this.ValorHora = valorHora;
-               this.ValorHoraAdicional = valorHoraAdicional;
           }
     }
 }

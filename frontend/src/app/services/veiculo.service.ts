@@ -25,8 +25,26 @@ export class VeiculoService {
     );
   }
 
+  // getById(id: number): Observable<Veiculo> {
+  //   const url = `${this.baseURL}/${id}`;
+  //   console.log(url);
+  //   return this.http.get<Veiculo>(url).pipe(
+  //     map((obj) => obj),
+  //     catchError((e) => this.errorHandler(e))
+  //   );
+  // }
+
   getById(id: number): Observable<Veiculo> {
-    const url = `${this.baseURL}/${+id}`;
+    const url = `${this.baseURL}/id=${id}`;
+    console.log(url);
+    return this.http.get<Veiculo>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  getByPlaca(placa: string): Observable<Veiculo> {
+    const url = `${this.baseURL}/${placa}`;
     console.log(url);
     return this.http.get<Veiculo>(url).pipe(
       map((obj) => obj),

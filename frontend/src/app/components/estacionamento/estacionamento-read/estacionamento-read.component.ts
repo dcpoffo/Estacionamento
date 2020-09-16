@@ -13,7 +13,7 @@ export class EstacionamentoReadComponent implements OnInit {
 
   // displayedColumns = ['id', 'placa', 'entradaData', 'entradaHora', 'saidaData', 'saidaHora', 'valorHora', 'valotTotal', 'acoes'];
 
-  displayedColumns = ['placa', 'entrada', 'saida', 'valorHora', 'acoes'];
+  displayedColumns = ['placa', 'entrada', 'saida', 'valorHora', 'valorTotal', 'acoes'];
 
   constructor(
     private estacionamentoServico: EstacionamentoService

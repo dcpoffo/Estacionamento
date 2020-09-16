@@ -16,6 +16,7 @@ namespace backend.data
 
           Task<Veiculo[]> GetAllVeiculosAsync();
           Task<Veiculo> GetVeiculoAsyncById(int veiculoId);
+          Task<Veiculo> GetVeiculoAsyncByPlaca(string placa);
 
           Task<Estacionamento[]> GetAllEstacionamentosAsync(bool incluirVeiculo, bool incluirPreco);
           Task<Estacionamento> GetEstacionamentoAsyncById(int veiculoId, bool incluirVeiculo, bool incluirPreco);

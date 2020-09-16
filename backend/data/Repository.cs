@@ -103,6 +103,15 @@ namespace backend.data
                                            .Where(a => a.Id == veiculoId);
 
                return await query.FirstOrDefaultAsync();
-          }         
+          }
+
+          public async Task<Veiculo> GetVeiculoAsyncByPlaca(string placa)
+          {
+               IQueryable<Veiculo> query = _context.Veiculo;
+               query = query.AsNoTracking().OrderBy(a => a.Id)
+                                           .Where(a => a.Placa == placa);
+
+               return await query.FirstOrDefaultAsync();
+          }
      }
 }

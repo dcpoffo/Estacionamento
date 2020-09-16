@@ -18,8 +18,8 @@ namespace backend.data
           {
                builder.Entity<TabelaPreco>()
                       .HasData(new List<TabelaPreco>(){
-                   new TabelaPreco(1, DateTime.Parse("2020-01-01"), DateTime.Parse("2020-09-30"), 3.0, 1.5),
-                   new TabelaPreco(2, DateTime.Parse("2020-10-01"), DateTime.Parse("2020-12-31"), 5.0, 2.0),
+                   new TabelaPreco(1, DateTime.Parse("2020-01-01"), DateTime.Parse("2020-09-30"), 3.0),
+                   new TabelaPreco(2, DateTime.Parse("2020-10-01"), DateTime.Parse("2020-12-31"), 5.0),
                       });
 
                builder.Entity<Veiculo>()

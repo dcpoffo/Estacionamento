@@ -11,7 +11,8 @@ export class PrecoReadComponent implements OnInit {
 
   precos: Preco[];
 
-  displayedColumns = ['id', 'vigenciaInicial', 'vigenciaFinal', 'valorHora', 'valorHoraAdicional', 'acoes'];
+  // displayedColumns = ['id', 'vigenciaInicial', 'vigenciaFinal', 'valorHora' , 'acoes'];
+  displayedColumns = ['id', 'vigenciaInicial', 'vigenciaFinal', 'valorHora' ];
 
   constructor(
     private precoServico: PrecoService

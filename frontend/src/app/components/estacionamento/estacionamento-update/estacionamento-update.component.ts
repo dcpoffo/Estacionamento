@@ -18,7 +18,9 @@ export class EstacionamentoUpdateComponent implements OnInit {
   veiculos: Veiculo[];
   precos: Preco[];
   estacionamento: Estacionamento;
-  data: Date = new Date();
+
+  dataSaida: Date = new Date();
+  valorHora: number;
 
   constructor(
     private estacionamentoServico: EstacionamentoService,
@@ -33,16 +35,15 @@ export class EstacionamentoUpdateComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.estacionamentoServico.getById(id).subscribe((estacionamento) => {
       this.estacionamento = estacionamento;
-      console.log("Date = " + this.data);
-      this.estacionamento.saida = this.data;
-      // esse valor aparece no campo ao clicar para atualizar
-      // this.estacionamento.valorTotal = 5;
+
+      //atribui automaticamente a data atuali à data de saida, ao clicar em marcar saida
+      this.estacionamento.saida = this.dataSaida;
+
+      //chamar funcao de calculo do valor passando estacionamento
+
     });
     this.carregarVeiculos();
     this.carregarPrecos();
-
-
-    //chamar funcao para calcular o valor do estacionamentno
   }
 
   carregarVeiculos(): void {

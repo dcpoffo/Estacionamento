@@ -16,7 +16,7 @@ namespace backend.Controllers
           {
                _repositorio = repositorio;
           }
-
+          
           [HttpGet]
           public async Task<IActionResult> GetAll()
           {

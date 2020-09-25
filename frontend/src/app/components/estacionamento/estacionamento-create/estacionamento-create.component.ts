@@ -1,3 +1,4 @@
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { PrecoService } from './../../../services/preco.service';
 import { VeiculoService } from './../../../services/veiculo.service';
 import { Preco } from 'src/app/models/Preco';
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MensagemService } from 'src/app/services/mensagem.service';
 import { Estacionamento } from 'src/app/models/Estacionamento';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-estacionamento-create',
@@ -17,6 +19,7 @@ export class EstacionamentoCreateComponent implements OnInit {
 
   veiculos: Veiculo[];
   precos: Preco[];
+  dataEstrada: Date = new Date();
 
   estacionamento: Estacionamento = {
     entrada: null,
@@ -24,30 +27,31 @@ export class EstacionamentoCreateComponent implements OnInit {
     valorTotal: 0.0,
     tabelaPrecoId: 0,
     veiculoId: 0
-  }
+  };
 
   constructor(
     private estacionamentoServico: EstacionamentoService,
     private veiculoServico: VeiculoService,
     private precoServico: PrecoService,
     private router: Router,
-    private mensagemServico: MensagemService
+    private mensagemServico: MensagemService,
   ) { }
 
   ngOnInit() {
     this.carregarPrecos();
     this.carregarVeiculos();
+    //this.estacionamento.entrada = this.dataEstrada;
   }
 
   carregarVeiculos(): void {
-    this.veiculoServico.getAll().subscribe(prob => {
-      this.veiculos = prob;
+    this.veiculoServico.getAll().subscribe(a => {
+      this.veiculos = a;
     });
   }
 
   carregarPrecos(): void {
-    this.precoServico.getAll().subscribe(prob => {
-      this.precos = prob;
+    this.precoServico.getAll().subscribe(a => {
+      this.precos = a;
     });
   }
 
@@ -60,6 +64,11 @@ export class EstacionamentoCreateComponent implements OnInit {
 
   cancelar(): void {
     this.router.navigate(['/estacionamentos']);
+  }
+
+  procurarData(): void {
+    console.log('ALTEROU!!!')
+    this.estacionamento.tabelaPrecoId = 1;
   }
 
 }

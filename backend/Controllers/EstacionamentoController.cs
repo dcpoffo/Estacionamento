@@ -75,6 +75,9 @@ namespace backend.Controllers
                          return NotFound();
                     }
 
+                    CalculoValorTotalEstacionamentoServico calcular = new CalculoValorTotalEstacionamentoServico();
+                    estacionamento.ValorTotal =  calcular.CalculoValorTotal(estacionamento);
+
                     _repositorio.Update(estacionamento);
                     if (await _repositorio.SaveChangesAsync())
                     {

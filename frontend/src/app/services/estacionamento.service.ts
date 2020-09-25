@@ -33,6 +33,14 @@ export class EstacionamentoService {
     );
   }
 
+  getIdByData(data: Date): Observable<Estacionamento> {
+    const url = `${this.baseURL}/${data}`;
+    return this.http.get<Estacionamento>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
   put(estacionamento: Estacionamento): Observable<Estacionamento> {
     const url = `${this.baseURL}/${estacionamento.id}`;
     return this.http.put<Estacionamento>(url, estacionamento).pipe(
@@ -42,6 +50,7 @@ export class EstacionamentoService {
   }
 
   post(estacionamento: Estacionamento): Observable<Estacionamento> {
+    console.log(estacionamento);
     return this.http.post<Estacionamento>(this.baseURL, estacionamento).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

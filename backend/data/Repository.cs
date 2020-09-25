@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using backend.models;
@@ -46,6 +47,15 @@ namespace backend.data
                IQueryable<TabelaPreco> query = _context.TabelaPreco;
                query = query.AsNoTracking().OrderBy(a => a.Id)
                                            .Where(a => a.Id == precoId);
+
+               return await query.FirstOrDefaultAsync();
+          }
+
+          public async Task<TabelaPreco> GetPrecoAsyncByData(DateTime data)
+          {
+               IQueryable<TabelaPreco> query = _context.TabelaPreco;
+               query = query.AsNoTracking().OrderBy(a => a.Id)
+                                           .Where(a => a.VigenciaInicial >= data);
 
                return await query.FirstOrDefaultAsync();
           }
@@ -113,5 +123,7 @@ namespace backend.data
 
                return await query.FirstOrDefaultAsync();
           }
+
+          
      }
 }

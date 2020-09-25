@@ -3,17 +3,32 @@
     <form>
         <div>
             <mat-form-field appearance="outline">
-                <mat-label>Entrdada</mat-label>
-                <input matInput type="datetime-local" matInput [(ngModel)]="estacionamento.entrada" name="entrada" />
+                <mat-label>Entrada</mat-label>
+                <!-- <input matInput type="datetime-local" matInput [(ngModel)]="estacionamento.entrada" [ngModelOptions]="{standalone: true}" /> -->
+                <input matInput type="datetime-local" (change)="procurarData()" matInput [(ngModel)]="estacionamento.entrada" [ngModelOptions]="{standalone: true}" />
             </mat-form-field>
         </div>
 
         <div>
             <mat-form-field appearance="outline">
                 <mat-label>Saida</mat-label>
-                <input matInput type="datetime-local" matInput [(ngModel)]="estacionamento.saida" name="saida" />
+                <input matInput type="datetime-local" matInput [(ngModel)]="estacionamento.saida" [ngModelOptions]="{standalone: true}" />
             </mat-form-field>
         </div>
+
+        <!-- <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Entrdada</mat-label>
+                <input matInput type="datetime-local" matInput [(ngModel)]="estacionamento.entrada" />
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Saida</mat-label>
+                <input matInput type="datetime-local" matInput [(ngModel)]="estacionamento.saida" />
+            </mat-form-field>
+        </div> -->
 
         <div>
             <mat-form-field appearance="outline">
@@ -31,12 +46,12 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <div>
+        <!-- <div>
             <mat-form-field appearance="outline">
                 <mat-label>Valor Total</mat-label>
                 <input type="number" matInput [(ngModel)]="estacionamento.valorTotal" name="valorTotal" />
             </mat-form-field>
-        </div>
+        </div> -->
     </form>
     <button mat-raised-button (click)="cadastrarEstacionamento()" color="primary">Salvar
   </button>

@@ -7,6 +7,7 @@ import { VeiculoService } from 'src/app/services/veiculo.service';
 import { PrecoService } from 'src/app/services/preco.service';
 import { MensagemService } from 'src/app/services/mensagem.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-estacionamento-update',
@@ -35,11 +36,7 @@ export class EstacionamentoUpdateComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.estacionamentoServico.getById(id).subscribe((estacionamento) => {
       this.estacionamento = estacionamento;
-
-      //atribui automaticamente a data atuali à data de saida, ao clicar em marcar saida
       this.estacionamento.saida = this.dataSaida;
-
-      //chamar funcao de calculo do valor passando estacionamento
 
     });
     this.carregarVeiculos();

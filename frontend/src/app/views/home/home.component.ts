@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
       title: 'Início',
       icon: 'home',
       routeUrl: ''
-    }
+    };
   }
 
   ngOnInit() {

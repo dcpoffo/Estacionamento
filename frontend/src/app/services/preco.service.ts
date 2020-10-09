@@ -58,7 +58,14 @@ export class PrecoService {
 
   errorHandler(e: any): Observable<any> {
     console.log(e);
-    this.mensagemServico.showMessage('Ocorreu um erro com o módulo Preço!', true);
+    if (e.status === 409)
+    {
+      this.mensagemServico.showMessage('Esta data já está sendo usada como vigência', true);
+    }
+    else
+    {
+      this.mensagemServico.showMessage('Ocorreu um erro com o módulo Preço!', true);
+    }
     return EMPTY;
   }
 

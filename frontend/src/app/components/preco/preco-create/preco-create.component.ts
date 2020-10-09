@@ -29,7 +29,7 @@ export class PrecoCreateComponent implements OnInit {
 
   cadastrarPreco(): void {
     this.precoServico.post(this.preco).subscribe(() => {
-      this.mensagemServico.showMessage('Vigencia cadastrada com sucesso!')
+      this.mensagemServico.showMessage('Vigencia cadastrada com sucesso!');
       this.router.navigate(['/precos']);
     });
   }

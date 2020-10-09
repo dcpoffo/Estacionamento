@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using backend.data;
 using backend.models;
+using backend.services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
@@ -49,19 +50,27 @@ namespace backend.Controllers
           [HttpPost]
           public async Task<IActionResult> Post(TabelaPreco preco)
           {
+               var listaTodosPrecos = await _repositorio.GetAllPrecosAsync();
+               // verificar se datas ja fazem parte de uma vigência
+               VerificaSeNovaVigenciaJaExisteServico verificaDatas = new VerificaSeNovaVigenciaJaExisteServico();
+
                try
                {
-                    _repositorio.Add(preco);
-                    if (await _repositorio.SaveChangesAsync())
+                    if (!verificaDatas.VerificaSeNovaVigenciaJaExiste(preco, listaTodosPrecos))
                     {
-                         return Ok(preco);
+                         _repositorio.Add(preco);
+                         if (await _repositorio.SaveChangesAsync())
+                         {
+                              return Ok(preco);
+                         }                         
                     }
                }
                catch (Exception ex)
                {
                     return BadRequest($"Erro ao salvar Preço: {ex.Message}");
                }
-               return BadRequest();
+               return Conflict("Esta data já está sendo usada como vigência!");
+
           }
 
           [HttpPut("{precoId}")]
